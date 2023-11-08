@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <canvas id="glDemo" width="500" height="500"></canvas>
+    </div>
+    <script type="module">
+        import { LineDrawer } from '../src/index.js';
+        const canvas = document.getElementById('glDemo');
+        const gl = canvas.getContext('webgl2');
+        const points = [
+            [-0.9, 0.0],
+            [-0.8, -0.3],
+            [-0.6, 0.2],
+            [-0.4, -0.5],
+            [0.0, 0.0],
+            [0.2, 0.2],
+            [0.4, -0.4],
+            [0.6, 0.4],
+        ];
+
+        const resolution = [
+            canvas.getBoundingClientRect().width * window.devicePixelRatio,
+            canvas.getBoundingClientRect().height * window.devicePixelRatio,
+        ];
+
+        const props = {
+            // WebGL context
+            gl,
+            // Points coordinates
+            points,
+            // Devices resolution
+            resolution,
+            // Line Width
+            lineWidth: 20,
+            // Max miter length
+            maxMiterLength: 20,
+            // Line color
+            color: [0.6, 0.7, 0.8],
+            // Line cap color
+            capColor: [0.5, 1.0, 0.5],
+            // Line cap style: 'round' | 'circle'
+            capStyle: 'round',
+        };
+
+        const lineDrawer = new LineDrawer(props);
+        const transFormMatrix = [
+            1., 0., 0., 0.,
+            0., 1., 0., 0.,
+            0., 0., 1., 0.,
+            0., 0., 0., 1.,
+        ];
+
+        const renderer = () => {
+            // Pass the transform matrix to line drawer
+            lineDrawer.render(transFormMatrix);
+            requestAnimationFrame(renderer);
+        };
+        
+        // Start render
+        renderer();
+    </script>
+</body>
+</html>

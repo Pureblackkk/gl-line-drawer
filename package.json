@@ -1,0 +1,32 @@
+{
+  "name": "gl-line-drawer",
+  "version": "1.0.0",
+  "description": "A simple line drawer using webgl",
+  "main": "index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pureblackkk/gl-line-drawer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pureblackkk/gl-line-drawer/issues"
+  },
+  "homepage": "https://github.com/Pureblackkk/gl-line-drawer#readme",
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.0.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "webgl",
+    "gl",
+    "line",
+    "draw"
+  ],
+  "type": "module"
+}

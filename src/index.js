@@ -11,7 +11,7 @@ export class LineDrawer {
             maxMiterLength = 20,
             color = [0.0, 0.0, 0.0],
             capStyle,
-            capColor,
+            capColor = [0.0, 0.0, 0.0],
             texture,
         } = props;
 
@@ -36,7 +36,7 @@ export class LineDrawer {
             points,
             lineWidth,
             maxMiterLength,
-            resolvedResolution,
+            resolution: resolvedResolution,
             capStyle,
             capColor,
             program: this.program,

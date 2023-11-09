@@ -3,7 +3,7 @@ This is a simple 2D line drawer package using WebGL. Due to the restriction of W
 
 This package enables you to pass points coordinates and expected transform matrix to generate line. It supports drawing line with optional caps and colors. You can also set the maximum miter length to avoid unexpected mitters at the bend.
 
-![]("img1.jpg")
+<img src="/img1.jpg" width="500" height="500">
 
 # Installing
 `npm install gl-line-drawer`
